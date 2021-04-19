@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "site": "payment-service-reactive-form",
+    "public": "dist/payment-service",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
