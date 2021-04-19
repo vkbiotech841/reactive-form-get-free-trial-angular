@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="container-fluid">
+        <section>
+            <div class="row">
+                <div class="col-12 col-lg-6 col-md-6 col-sm-6">
+                    <div>
+                        <img src="assets/images/basicLogo/filed-logo-01.png" alt="">
+                    </div>
+                    <div class="main-header mt-5">
+                        <div>
+                            Book a demo today and
+                        </div>
+                        <div>
+                            get two weeks for free. Why?
+                        </div>
+                    </div>
+                    <div class="header mt-3">
+                        Because Our AI-Powered Software Will Exceed Your Marketing Goals.
+                    </div>
+                    <div class="mt-5">
+                        <img src="assets/images/basicLogo/blue_dots.svg" alt="">
+                        <img src="assets/images/basicLogo/desktop.png" alt="" style="width: 70%;">
+                    </div>
+
+                </div>
+                <div class="col-12 col-lg-6 col-md-6 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="sub-header mt-4" style="display: flex; justify-content: center;">
+                                Let's Start
+                            </div>
+                            <div class="fill-out-form mt-2" style="display: flex; justify-content: center;">
+                                Fill Out the form and we'll get in touch to get your trial set up.
+                            </div>
+                            <form>
+
+                            </form>
+                            <div class="row">
+                                <div class="col-12 col-lg-12 col-md-12 col-sm-12 mt-4"
+                                    style="display: flex; justify-content: center;">
+                                    <button class="btn btn-secondary trial-btn w-100" [routerLink]="['/user-detail']">
+                                        GET FREE TRIAL
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="row" *ngIf="userDetail">
+            <div class="col-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <span><b>First Name:</b></span>
+
+                            {{userDetail.firstName | titlecase}}
+                        </div>
+                        <div>
+                            <span><b>Last Name:</b></span>
+                            {{userDetail.lastName | titlecase}}
+                        </div>
+                        <div>
+                            <span><b>Email:</b></span>
+                            {{userDetail.email | titlecase}}
+                        </div>
+                        <div>
+                            <span><b>Monthly Advertising Budget:</b></span>
+                            {{userDetail.monthlyAdvertisingBudget | titlecase}}$
+                        </div>
+                        <div>
+                            <span><b>Contact Number:</b></span>
+                            {{userDetail.phoneNumber | titlecase}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
