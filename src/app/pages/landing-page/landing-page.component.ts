@@ -1,3 +1,4 @@
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UtilityService } from './../../common/services/utility.service';
 import { PaymentService } from './../../common/services/payment.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,13 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit {
 
+
+  advertimentForm: FormGroup;
+  isAdvertisement: FormControl;
+
+
+
   constructor(
     private paymentService: PaymentService,
-    private utilityService: UtilityService
+    private utilityService: UtilityService,
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
     this.getUserData();
+  }
+
+
+  initiateAndValidateForm() {
+    this.isAdvertisement = new FormControl("", [Validators.required]);
+
+    this.advertimentForm = this.formBuilder.group({
+      isAdvertisement: this.isAdvertisement
+    })
+
   }
 
 
@@ -28,6 +46,10 @@ export class LandingPageComponent implements OnInit {
       }, error => {
         this.utilityService.showError("error", "Something went wrong");
       })
+  };
+
+  toggleBudgets(value) {
+    console.log("budget", value);
   };
 
 }

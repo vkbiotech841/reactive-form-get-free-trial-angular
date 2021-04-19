@@ -1,5 +1,34 @@
 <div class="container">
     <div class="container-fluid">
+        <div class="row" *ngIf="userDetail">
+            <div class="col-12 col-lg-12 col-md-12 col-sm-12" style="margin-bottom: 5%;">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <span><b>First Name:</b></span>
+
+                            {{userDetail.firstName | titlecase}}
+                        </div>
+                        <div>
+                            <span><b>Last Name:</b></span>
+                            {{userDetail.lastName | titlecase}}
+                        </div>
+                        <div>
+                            <span><b>Email:</b></span>
+                            {{userDetail.email | titlecase}}
+                        </div>
+                        <div>
+                            <span><b>Monthly Advertising Budget:</b></span>
+                            {{userDetail.monthlyAdvertisingBudget | titlecase}}$
+                        </div>
+                        <div>
+                            <span><b>Contact Number:</b></span>
+                            {{userDetail.phoneNumber | titlecase}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <section>
             <div class="row">
                 <div class="col-12 col-lg-6 col-md-6 col-sm-6">
@@ -29,10 +58,52 @@
                             <div class="sub-header mt-4" style="display: flex; justify-content: center;">
                                 Let's Start
                             </div>
-                            <div class="fill-out-form mt-2" style="display: flex; justify-content: center;">
-                                Fill Out the form and we'll get in touch to get your trial set up.
+                            <div class="fill-out-form mt-5" style=" justify-content: center;">
+                                <p style="padding: 0;margin: 0;">
+                                    Fill Out the form and we'll get in touch to
+                                </p>
+                                <p style="padding: 0;margin: 0;">get your trial set up.</p>
                             </div>
-                            <form>
+                            <form [formGroup]="advertimentForm">
+                                <div class="form-group mt-5">
+                                    <label class="col-md-12 label-font">
+                                        Do you want to make ads that convert?
+                                    </label>
+                                    <div class="col-12 col-lg-12 col-md-12 col-sm-12">
+                                        <div class="row">
+                                            <div class="col-12 col-lg-6 col-md-6 col-sm-2">
+                                                <div class="form-check form-check-inline mr-5">
+                                                    <input class="form-check-input" type="radio" name="isAdvertisement"
+                                                        value="yes" formControlName="isAdvertisement">
+                                                    <label class="form-check-label">Yes</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-lg-6 col-md-6 col-sm-2">
+                                                <div class="form-check form-check-inline mr-2">
+                                                    <input class="form-check-input" type="radio" name="isAdvertisement"
+                                                        value="no" formControlName="isAdvertisement">
+                                                    <label class="form-check-label">No</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-12 col-md-12 mt-5">
+                                    <label class="col-md-12 label-font">
+                                        What's your monthly ad budget?
+                                    </label>
+                                    <span class="square-input-box">
+                                        <select (change)="toggleBudgets($event.target)" class="form-control"
+                                            style="outline: none; border: none;">
+                                            <option value="select">Select</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                            <option value="150">150</option>
+                                            <option value="150">200</option>
+                                        </select>
+                                    </span>
+
+                                </div>
 
                             </form>
                             <div class="row">
@@ -49,34 +120,6 @@
             </div>
         </section>
 
-        <div class="row" *ngIf="userDetail">
-            <div class="col-12 col-lg-12 col-md-12 col-sm-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div>
-                            <span><b>First Name:</b></span>
 
-                            {{userDetail.firstName | titlecase}}
-                        </div>
-                        <div>
-                            <span><b>Last Name:</b></span>
-                            {{userDetail.lastName | titlecase}}
-                        </div>
-                        <div>
-                            <span><b>Email:</b></span>
-                            {{userDetail.email | titlecase}}
-                        </div>
-                        <div>
-                            <span><b>Monthly Advertising Budget:</b></span>
-                            {{userDetail.monthlyAdvertisingBudget | titlecase}}$
-                        </div>
-                        <div>
-                            <span><b>Contact Number:</b></span>
-                            {{userDetail.phoneNumber | titlecase}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
