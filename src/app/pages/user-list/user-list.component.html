@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="container-fluid">
+        <div class="row" *ngIf="userDetail">
+            <div class="col-12 col-lg-12 col-md-12 col-sm-12" style="margin-bottom: 5%;">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <span><b>First Name:</b></span>
+
+                            {{userDetail.firstName | titlecase}}
+                        </div>
+                        <div>
+                            <span><b>Last Name:</b></span>
+                            {{userDetail.lastName | titlecase}}
+                        </div>
+                        <div>
+                            <span><b>Email:</b></span>
+                            {{userDetail.email | titlecase}}
+                        </div>
+                        <div>
+                            <span><b>Monthly Advertising Budget:</b></span>
+                            {{userDetail.monthlyAdvertisingBudget | titlecase}}$
+                        </div>
+                        <div>
+                            <span><b>Contact Number:</b></span>
+                            {{userDetail.phoneNumber | titlecase}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

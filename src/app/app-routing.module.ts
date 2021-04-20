@@ -1,3 +1,4 @@
+import { UserListComponent } from './pages/user-list/user-list.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { UserDetailComponent } from './pages/user-detail/user-detail.component';
 import { AppComponent } from './app.component';
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: "user-detail",
     component: UserDetailComponent
+  },
+  {
+    path: "user-list",
+    component: UserListComponent
   }
 ];
 

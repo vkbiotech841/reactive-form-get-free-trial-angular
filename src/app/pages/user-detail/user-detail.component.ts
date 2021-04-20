@@ -68,7 +68,7 @@ export class UserDetailComponent implements OnInit {
       this.paymentService.postData(data)
         .subscribe(result => {
           this.utilityService.showSuccess("", "Your Request for Free Trial is Successfully Submitted.");
-          this.router.navigate(["/"]);
+          this.router.navigate(["/user-list"]);
         }, error => {
           this.utilityService.showError("", "Something Went Wrong.");
         })
